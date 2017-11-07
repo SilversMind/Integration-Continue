@@ -6,7 +6,7 @@
   }
 	$file_precontent=file_get_contents("list_conf.json");
 	$file_content=json_decode($file_precontent,true);
-	$Date=$file_content['Date'];
+	$arr = array("un", "deux", "trois");
 	var_dump($file_content);
 ?>
         <!DOCTYPE html>
@@ -61,21 +61,17 @@
                               </tr>
                           </thead>
                           <tbody>
+                          <?php if($file_content):
+							$i=0;
+							while($i < sizeof($file_content['Confs'])){ ?>
                               <tr>
-                                <td>John</td>
-                                <td>Doe</td>
-                                <td>john@example.com</td>
-                              </tr>
-                              <tr>
-                                <td>Mary</td>
-                                <td>Moe</td>
-                                <td>mary@example.com</td>
-                              </tr>
-                              <tr>
-                                <td>July</td>
-                                <td>Dooley</td>
-                                <td>july@example.com</td>
-                              </tr>
+                                <td><?php echo $file_content['Confs'][$i]['Time']; ?></td>
+                                <td><?php echo $file_content['Confs'][$i]['Author']; ?></td>
+                                <td><?php echo $file_content['Confs'][$i]['Title']; ?></td>
+                              </tr> 
+                              <?php $i++; } ?>                                                 
+                          <?php else: echo "nique ta mère"; ?>
+                          <?php endif; ?>
                           </tbody>
                     </table>
               </div>
