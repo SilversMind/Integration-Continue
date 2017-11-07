@@ -81,7 +81,7 @@
         <footer class="container-fluid text-center">
           <div class="row">
             <div class="col-md-4">
-              <a href="./Administration.html"><button type="button" class="btn btn-link">Administrateur</button></a>
+              <a href="./Administration.php"><button type="button" class="btn btn-link">Administrateur</button></a>
             </div>
             <div class="col-md-4">
               <button type="button" class="btn btn-link">Ajout Conference</button>
